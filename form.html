@@ -1,0 +1,81 @@
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>email signatures</title>
+    <link rel="icon" type="image/png" href="http://www.innocentdrinks.co.uk/favicon.ico">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+</head>
+
+<body style="font-family:Helvetica, Arial, Sans-Serif; color: #b20932; font-size:13px;">
+    <form id="commentForm">
+        <fieldset>
+            <legend>Fill in your details, and we will sort out a signature</legend>
+            <p>
+                <input id="fName" name="fname" minlength="2" type="text" placeholder="name" required>
+            </p>
+            <p>
+                <input id="email" type="email" name="email" placeholder="email address" required>
+            </p>
+            <p>
+                <input id="jkName" type="text" name="jkName" placeholder="funny name" required>
+            </p>
+
+            <p>
+                <input id="jobRole" type="text" name="jobRole" placeholder="job role">
+            </p>
+
+            <input id="phone" type="number" name="phone" placeholder="phone number" required>
+            </p>
+
+            <p>
+                <input class="submit" type="button" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+    <script>
+        $("#commentForm").validate();
+        $(".submit").click(function () {
+            $("#commentForm input").each(function () {
+                $("#" + $(this).attr('id') + "Sig").html($(this).val());
+            });
+            if ($("#jkName").val() != "") {
+                $("#jkNameSigBR").html($("#jkName").val() + "<br>");
+            } else {
+                $("#jkNameSigBR").html("");
+            };
+        });
+    </script>
+
+
+
+    <!--    Email sig starts here-->
+    <div style="font-size:13px;">
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------
+        <br>
+        <b>innocent un-plugged.</b> Our brand new festival. A weekend off the grid. Come and hang out in the woods.
+        <br>
+        <br>
+
+        <a href="http://www.innocentunplugged.com">http://www.innocentunplugged.com/</a>
+        <br> ------------------------------------------------------------------------------------------------------------------------------------------------------------
+        <br>
+        <br>
+        <br>
+        <span id="fNameSig">Name</span>
+        <br>
+        <span id="jkNameSigBR">
+</span>
+        <span id="jobRoleSig">Job role</span>
+        <br> e:
+        <span id="emailSig">email.email@innocentdrinks.co.uk</span>
+        <br> t:
+        <span id="phoneSig">0203 235 0462</span>
+        <br> innocent ltd
+        <br> Fruit Towers | 342 Ladbroke Grove | (please note the entry gate is on Kensal Road) | London W10 5BU | <a href="https://www.google.co.uk/maps?f=q&source=s_q&hl=en&geocode&q=INnocent+Drinks+W10+5BU&aq&sll=53.800651,-4.064941&sspn=19.353594,56.99707&ie=UTF8&hq=Innocent+Drinks+W10+5BU&hnear&ll=51.526949,-0.215639&spn=0.004959,0.013915&z=17&iwloc=A">Find us here</a>
+    </div>
+</body>
+
+</html>
